@@ -3,7 +3,6 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 import {ReduxDevtoolsProvider} from './providers/reduxDevtoolsProvider';
-import startRemotedev from './common/startRemotedev';
 
 export function activate(context: vscode.ExtensionContext) {
 
@@ -25,7 +24,6 @@ export function activate(context: vscode.ExtensionContext) {
 
     context.subscriptions.push(vscode.commands.registerCommand('extension.startRemotedevServer', () => {
         return new Promise((resolve, reject) => {
-            startRemotedev();
             resolve();
         }).then(() => console.log('remotedev start successfully'));
     }));
