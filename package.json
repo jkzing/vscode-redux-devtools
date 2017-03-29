@@ -3,12 +3,12 @@
   "displayName": "vscode-redux-devtools",
   "description": "vscode redux devtools wrapper",
   "version": "0.0.1",
-  "publisher": "redux-devtools",
+  "publisher": "jingkaizhao",
   "engines": {
     "vscode": "^1.10.0"
   },
   "categories": [
-    "Other"
+    "Debugger"
   ],
   "activationEvents": [
     "onCommand:extension.reduxDevtools"
