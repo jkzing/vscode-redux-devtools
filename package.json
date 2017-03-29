@@ -35,9 +35,4 @@
     "@types/node": "^6.0.40",
     "@types/mocha": "^2.2.32"
   },
-  "dependencies": {
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "remotedev-app": "^0.10.7"
-  }
 }
