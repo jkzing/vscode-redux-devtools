@@ -2,7 +2,8 @@
     "name": "vscode-redux-devtools",
     "displayName": "Redux DevTools",
     "description": "vscode redux devtools wrapper",
-    "version": "0.0.2",
+    "icon": "logo/128x128.png",
+    "version": "0.0.5",
     "publisher": "jingkaizhao",
     "engines": {
         "vscode": "^1.10.0"
