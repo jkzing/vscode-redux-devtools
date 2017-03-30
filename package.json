@@ -5,6 +5,23 @@
     "icon": "logo/128x128.png",
     "version": "0.0.7",
     "publisher": "jingkaizhao",
+    "author": {
+        "name": "Jingkai Zhao",
+        "email": "jingkai.zhao@foxmail.com"
+    },
+    "license": "MIT",
+    "homepage": "https://github.com/jkzing/vscode-redux-devtools",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jkzing/vscode-redux-devtools"
+    },
+    "bugs": {
+        "url": "https://github.com/jkzing/vscode-redux-devtools/issues"
+    },
+    "galleryBanner": {
+        "color": "#CCDEF2",
+        "theme": "dark"
+    },
     "engines": {
         "vscode": "^1.10.0"
     },
@@ -12,21 +29,32 @@
         "Debuggers"
     ],
     "activationEvents": [
-        "onCommand:extension.openReduxDevtools",
-        "onCommand:extension.startRemotedevServer"
+        "onCommand:extension.openReduxDevtools"
     ],
     "main": "./out/src/extension",
     "contributes": {
         "commands": [
             {
                 "command": "extension.openReduxDevtools",
-                "title": "Open Redux Devtools"
-            },
-            {
-                "command": "extension.startRemotedevServer",
-                "title": "Start Remotedev Server"
+                "title": "Redux Devtools: Open on the Side"
             }
-        ]
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "Redux Devtools Configuration",
+            "properties": {
+                "reduxdev.hostname": {
+                    "type": "string",
+                    "default": "127.0.0.1",
+                    "description": "The hostname your remotedev server started on."
+                },
+                "reduxdev.socketPort": {
+                    "type": "number",
+                    "default": 1024,
+                    "description": "The socket port for Redux Devtools to listen."
+                }
+            }
+        }
     },
     "scripts": {
         "vscode:prepublish": "tsc -p ./",
@@ -41,6 +69,5 @@
         "@types/node": "^6.0.40",
         "@types/mocha": "^2.2.32"
     },
-    "dependencies": {
-    }
+    "dependencies": {}
 }

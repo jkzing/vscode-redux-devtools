@@ -1,8 +1,18 @@
 import * as vscode from 'vscode';
 
-export class ReduxDevtoolsProvider implements vscode.TextDocumentContentProvider {
-    public constructor() {
+type socketOptions = {
+    hostname: string
+    port: number
+}
 
+export class ReduxDevtoolsProvider implements vscode.TextDocumentContentProvider {
+    private socketOptions = {
+        hostname: '127.0.0.1',
+        port: 1024,
+    };
+
+    public constructor(options: socketOptions) {
+        this.socketOptions = options;
     }
 
     public provideTextDocumentContent(uri: vscode.Uri): vscode.ProviderResult<string> {
@@ -30,8 +40,8 @@ export class ReduxDevtoolsProvider implements vscode.TextDocumentContentProvider
                                 RemoteDevApp, 
                                 {
                                 socketOptions: {
-                                    hostname: 'localhost',
-                                    port: 1024,
+                                    hostname: '${this.socketOptions.hostname}',
+                                    port: '${this.socketOptions.port}',
                                     autoReconnect: true
                                 }
                                 }, 

@@ -3,10 +3,19 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 import {ReduxDevtoolsProvider} from './providers/reduxDevtoolsProvider';
+import ReduxDevToolsSettings from './common/configSettings';
 
 export function activate(context: vscode.ExtensionContext) {
 
-    context.subscriptions.push(vscode.workspace.registerTextDocumentContentProvider('redux-devtools', new ReduxDevtoolsProvider()));
+    const settings = new ReduxDevToolsSettings();
+
+    const socketOptions = {
+        hostname: settings.get('hostname'),
+        port: settings.get('socketOptions'),
+    };
+
+    context.subscriptions.push(vscode.workspace.registerTextDocumentContentProvider(
+        'redux-devtools', new ReduxDevtoolsProvider(socketOptions)));
 
     const devtoolsUri = vscode.Uri.parse('redux-devtools://authority/Redux\0Devtools');
 

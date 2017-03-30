@@ -10,7 +10,7 @@ Due to limition of vscode extension api, this extension need to load external re
 
 ## Features
 
-Inspect redux actions for your own app. Like the one you may use in Chrome.
+Inspect redux actions for your redux app. Like the one you may use in Chrome.
 
 ![Feature](assets/demo.png)
 
@@ -18,7 +18,7 @@ Inspect redux actions for your own app. Like the one you may use in Chrome.
 
 * Install the extension
 
-* `cmd+shift+P` to open **Command Palette** and use command `Open Redux Devtools` to open the devtool in side panel.
+* `cmd+shift+P` to open **Command Palette** and type in `Redux Devtools`, select command `Open in the Side`.
 
 * In devtool pannel, click settings to set listening port and host to your remotedev server.
 
@@ -60,7 +60,15 @@ Inspect redux actions for your own app. Like the one you may use in Chrome.
 
 ## Extension Settings
 
-Comming soon.
+Redux Devtools contributes the following settings:
+
+> Note that these settings are used to create the remotedev-app instance.
+> You can also set these properties simplly by click `settings` in the top of the devtool.
+> Remotedev-app would try to persist your settings, and it has higher priority than vscode configurations.
+> We are using a beta version of remotedev-app, all of these behaviors may change in the future.
+
+* `reduxdev.hostname`: The hostname your remotedev server started on.
+* `reduxdev.socketPort`: The socket port for Redux Devtools to listen. 
 
 ## Release Notes
 
