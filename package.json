@@ -3,7 +3,7 @@
     "displayName": "Redux DevTools",
     "description": "vscode redux devtools wrapper",
     "icon": "logo/128x128.png",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "publisher": "jingkaizhao",
     "author": {
         "name": "Jingkai Zhao",
