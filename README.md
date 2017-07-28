@@ -75,8 +75,7 @@ Redux Devtools contributes the following settings:
 ## Known Issues
 
 * monitor icon not display correctly
-* click event not handled in Inspector select and Settings dialog, [#31](https://github.com/zalmoxisus/remotedev-app/issues/31)
-* extension only work with internet (it will load external resources).
+* ~~click event not handled in Inspector select and Settings dialog, [#31](https://github.com/zalmoxisus/remotedev-app/issues/31)~~
 
 ## License
 MIT
