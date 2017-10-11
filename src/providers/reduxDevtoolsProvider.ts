@@ -19,32 +19,35 @@ export class ReduxDevtoolsProvider implements vscode.TextDocumentContentProvider
     return `<!DOCTYPE html>
       <html>
           <head>
+              <base>
               <title>Remote Devtools</title>
+              <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
               <style>
                   html, body, #root {
                       width: 100%;
                       height: 100%;
                   }
               </style>
+              </base>
           </head>
           <body>
               <div id="root"></div>
           </body>
-          <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
-          <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
-          <script src="https://unpkg.com/remotedev-app@0.11.0-2/dist/remotedev-app.min.js"></script>
+          <script src="https://unpkg.com/react@15/dist/react.min.js" charset="UTF-8"></script>
+          <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js" charset="UTF-8"></script>
+          <script src="https://unpkg.com/remotedev-app@0.11.0-2/dist/remotedev-app.min.js" charset="UTF-8"></script>
           <script>
               let root = document.getElementById('root');
               ReactDOM.render(
                   React.createElement(
-                      RemoteDevApp, 
+                      RemoteDevApp,
                       {
                       socketOptions: {
                           hostname: '${this.socketOptions.hostname}',
                           port: '${this.socketOptions.port}',
                           autoReconnect: true
                       }
-                      }, 
+                      },
                       'Remote Devtools'
                   ),
                   root
