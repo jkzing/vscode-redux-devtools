@@ -11,7 +11,7 @@ export function activate(context: vscode.ExtensionContext) {
 
   const socketOptions = {
     hostname: settings.get('hostname'),
-    port: settings.get('socketOptions'),
+    port: settings.get('socketPort'),
   };
 
   context.subscriptions.push(vscode.workspace.registerTextDocumentContentProvider(
