@@ -42,11 +42,11 @@ export class ReduxDevtoolsProvider implements vscode.TextDocumentContentProvider
                   React.createElement(
                       RemoteDevApp,
                       {
-                      socketOptions: {
-                          hostname: '${this.socketOptions.hostname}',
-                          port: '${this.socketOptions.port}',
-                          autoReconnect: true
-                      }
+                        socketOptions: {
+                            hostname: '${this.socketOptions.hostname}',
+                            port: '${this.socketOptions.port}',
+                            autoReconnect: true,
+                        }
                       },
                       'Remote Devtools'
                   ),
