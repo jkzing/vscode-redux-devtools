@@ -44,7 +44,7 @@ Inspect redux actions for your redux app. Like the one you may use in Chrome.
   let composeEnhancers = composeWithDevTools({
       realtime: true,
       name: 'Your Instance Name',
-      host: '127.0.0.1',
+      hostname: '127.0.0.1',
       port: 1024, // the port your remotedev server is running at
   });
 
