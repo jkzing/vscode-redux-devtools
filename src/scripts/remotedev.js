@@ -1,9 +1,9 @@
-const remotedev = require('remotedev-server');
-import * as vscode from 'vscode';
+const remotedev = require('remotedev-server')
+import * as vscode from 'vscode'
 
-vscode.window.showInformationMessage('excuting script');
+vscode.window.showInformationMessage('excuting script')
 
 remotedev({
-    hostname: '127.0.0.1',
-    port: 1024,
-});
+  hostname: '127.0.0.1',
+  port: 1024,
+})

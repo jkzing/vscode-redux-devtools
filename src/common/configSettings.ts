@@ -1,13 +1,13 @@
-import * as vscode from 'vscode';
+import * as vscode from 'vscode'
 
 export default class ReduxDevtoolsSettings {
-  private config = {};
+  private config = {}
 
   public constructor() {
-    this.config = vscode.workspace.getConfiguration('reduxdev');
+    this.config = vscode.workspace.getConfiguration('reduxdev')
   }
 
   public get(key) {
-    return this.config[key];
+    return this.config[key]
   }
 }

@@ -1,73 +1,73 @@
 {
-    "name": "vscode-redux-devtools",
-    "displayName": "Redux DevTools",
-    "description": "vscode redux devtools wrapper",
-    "icon": "logo/128x128.png",
-    "version": "0.0.11",
-    "publisher": "jingkaizhao",
-    "author": {
-        "name": "Jingkai Zhao",
-        "email": "jingkai.zhao@foxmail.com"
-    },
-    "license": "MIT",
-    "homepage": "https://github.com/jkzing/vscode-redux-devtools",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/jkzing/vscode-redux-devtools"
-    },
-    "bugs": {
-        "url": "https://github.com/jkzing/vscode-redux-devtools/issues"
-    },
-    "galleryBanner": {
-        "color": "#35364E",
-        "theme": "dark"
-    },
-    "engines": {
-        "vscode": "^1.10.0"
-    },
-    "categories": [
-        "Debuggers"
+  "name": "vscode-redux-devtools",
+  "displayName": "Redux DevTools",
+  "description": "vscode redux devtools wrapper",
+  "icon": "logo/128x128.png",
+  "version": "0.0.11",
+  "publisher": "jingkaizhao",
+  "author": {
+    "name": "Jingkai Zhao",
+    "email": "jingkai.zhao@foxmail.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/jkzing/vscode-redux-devtools",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jkzing/vscode-redux-devtools"
+  },
+  "bugs": {
+    "url": "https://github.com/jkzing/vscode-redux-devtools/issues"
+  },
+  "galleryBanner": {
+    "color": "#35364E",
+    "theme": "dark"
+  },
+  "engines": {
+    "vscode": "^1.10.0"
+  },
+  "categories": [
+    "Debuggers"
+  ],
+  "activationEvents": [
+    "onCommand:extension.openReduxDevtools"
+  ],
+  "main": "./out/src/extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.openReduxDevtools",
+        "title": "Redux Devtools: Open on the Side"
+      }
     ],
-    "activationEvents": [
-        "onCommand:extension.openReduxDevtools"
-    ],
-    "main": "./out/src/extension",
-    "contributes": {
-        "commands": [
-            {
-                "command": "extension.openReduxDevtools",
-                "title": "Redux Devtools: Open on the Side"
-            }
-        ],
-        "configuration": {
-            "type": "object",
-            "title": "Redux Devtools Configuration",
-            "properties": {
-                "reduxdev.hostname": {
-                    "type": "string",
-                    "default": "127.0.0.1",
-                    "description": "The hostname your remotedev server started on."
-                },
-                "reduxdev.socketPort": {
-                    "type": "number",
-                    "default": 1024,
-                    "description": "The socket port for Redux Devtools to listen."
-                }
-            }
+    "configuration": {
+      "type": "object",
+      "title": "Redux Devtools Configuration",
+      "properties": {
+        "reduxdev.hostname": {
+          "type": "string",
+          "default": "127.0.0.1",
+          "description": "The hostname your remotedev server started on."
+        },
+        "reduxdev.socketPort": {
+          "type": "number",
+          "default": 1024,
+          "description": "The socket port for Redux Devtools to listen."
         }
-    },
-    "scripts": {
-        "vscode:prepublish": "tsc -p ./",
-        "compile": "tsc -watch -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "node ./node_modules/vscode/bin/test"
-    },
-    "devDependencies": {
-        "typescript": "^2.0.3",
-        "vscode": "^1.0.0",
-        "mocha": "^2.3.3",
-        "@types/node": "^6.0.40",
-        "@types/mocha": "^2.2.32"
-    },
-    "dependencies": {}
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "tsc -p ./",
+    "compile": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "typescript": "^2.0.3",
+    "vscode": "^1.0.0",
+    "mocha": "^2.3.3",
+    "@types/node": "^6.0.40",
+    "@types/mocha": "^2.2.32"
+  },
+  "dependencies": {}
 }
