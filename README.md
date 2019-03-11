@@ -1,16 +1,10 @@
 # Redux DevTools for VSCode
 
-Visual Studio Code extension to include remotedev-app into editor.
-
-Due to limition of vscode extension api, this extension need to load external resources. That means this extension will **only work with Internet connected**.
-
-> Please note that this is an expiremental extension for now, contains several known issues.
->
-> No guarantees until official beta version release, but you are welcome to take a shot.
+Visual Studio Code extension to integrate Redux Devtools into editor.
 
 ## Features
 
-Inspect redux actions for your redux app. Like the one you may use in Chrome.
+Inspect redux store of your app. Like the one you may use in Chrome.
 
 ![Feature](assets/demo.png)
 
@@ -51,7 +45,7 @@ Inspect redux actions for your redux app. Like the one you may use in Chrome.
 
 Redux Devtools contributes the following settings:
 
-> Note that these settings are used when launching the devtool
+> Note that these settings are used when launching the devtool.
 > You can also set those configurations manually by click `settings` in the top of the devtool. (after it is launched)
 
 * `reduxdev.hostname`: The hostname your remotedev server started on.
