@@ -30,6 +30,10 @@ export function getDevtoolContent(externals: Externals) {
     <div id="root"></div>
   </body>
   <script>
+    // Temporary workaround:
+    // localStorage cannot be accessed inside vscode WebView
+    // https://github.com/Microsoft/vscode/issues/52246
+    // TODO: make redux-devtools-core storage configurable
     Object.defineProperty(window, 'localStorage', {
       get() {
         return {
