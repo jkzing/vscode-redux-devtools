@@ -1,56 +1,36 @@
 'use strict'
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode'
-import { ReduxDevtoolsProvider } from './providers/reduxDevtoolsProvider'
-import ReduxDevToolsSettings from './common/configSettings'
+import * as path from 'path'
+import { getDevtoolContent } from './webview/reduxDevtools'
+// import ReduxDevToolsSettings from './common/configSettings'
 
 export function activate(context: vscode.ExtensionContext) {
-  const settings = new ReduxDevToolsSettings()
+  // const settings = new ReduxDevToolsSettings()
 
-  const socketOptions = {
-    hostname: settings.get('hostname'),
-    port: settings.get('socketPort'),
-  }
-
-  context.subscriptions.push(
-    vscode.workspace.registerTextDocumentContentProvider(
-      'redux-devtools',
-      new ReduxDevtoolsProvider(socketOptions)
-    )
-  )
-
-  const devtoolsUri = vscode.Uri.parse(
-    'redux-devtools://authority/Redux\0Devtools'
-  )
+  // const socketOptions = {
+  //   hostname: settings.get('hostname'),
+  //   port: settings.get('socketPort'),
+  // }
 
   context.subscriptions.push(
     vscode.commands.registerCommand('extension.openReduxDevtools', () => {
-      return vscode.commands
-        .executeCommand(
-          'vscode.previewHtml',
-          devtoolsUri,
-          vscode.ViewColumn.Two
-        )
-        .then(
-          success => {
-            console.log('previewing')
-          },
-          reason => {
-            vscode.window.showErrorMessage(reason)
-          }
-        )
-    })
-  )
+      const panel = vscode.window.createWebviewPanel(
+        'vscode-redux-devtools',
+        'Remote Devtools',
+        vscode.ViewColumn.Two,
+        { enableScripts: true }
+      )
 
-  context.subscriptions.push(
-    vscode.commands.registerCommand('extension.startRemotedevServer', () => {
-      return new Promise((resolve, reject) => {
-        resolve()
-      }).then(() => console.log('remotedev start successfully'))
+      const reduxDevtoolsCorePath = vscode.Uri.file(
+        path.join(context.extensionPath, 'externals', 'redux-devtools-core.js')
+      )
+      const externalSrc = {
+        reduxDevtoolsCore: reduxDevtoolsCorePath.with({ scheme: 'vscode-resource' })
+      }
+
+      panel.webview.html = getDevtoolContent(externalSrc)
     })
   )
 }
 
-// this method is called when your extension is deactivated
 export function deactivate() {}

@@ -36,7 +36,7 @@
     "commands": [
       {
         "command": "extension.openReduxDevtools",
-        "title": "Redux Devtools: Open on the Side"
+        "title": "Redux Devtools: Open Devtool to the Side"
       }
     ],
     "configuration": {
