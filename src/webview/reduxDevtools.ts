@@ -1,4 +1,5 @@
 import * as vscode from 'vscode'
+import * as path from 'path'
 
 export interface Externals {
   react: vscode.Uri
@@ -6,7 +7,53 @@ export interface Externals {
   reduxDevtoolsCore: vscode.Uri
 }
 
-export function getDevtoolContent(externals: Externals) {
+export interface SocketOptions {
+  hostname: string
+  port: string
+}
+
+export function createReduxDevtoolsPanel(
+  context: vscode.ExtensionContext
+): vscode.WebviewPanel {
+  const settings = vscode.workspace.getConfiguration('reduxdev')
+  const socketOptions: SocketOptions = {
+    hostname: settings.hostname || 'localhost',
+    port: settings.port || 8000
+  }
+
+  const panel = vscode.window.createWebviewPanel(
+    'vscode-redux-devtools',
+    'Remote Devtools',
+    vscode.ViewColumn.Two,
+    { enableScripts: true }
+  )
+
+  const reduxDevtoolsCorePath = vscode.Uri.file(
+    path.join(context.extensionPath, 'externals', 'redux-devtools-core.min.js')
+  )
+  const reactPath = vscode.Uri.file(
+    path.join(context.extensionPath, 'externals', 'react.production.min.js')
+  )
+  const reactDomPath = vscode.Uri.file(
+    path.join(context.extensionPath, 'externals', 'react-dom.production.min.js')
+  )
+
+  const pathOpts = { scheme: 'vscode-resource' }
+  const externalSrc = {
+    react: reactPath.with(pathOpts),
+    reactDom: reactDomPath.with(pathOpts),
+    reduxDevtoolsCore: reduxDevtoolsCorePath.with(pathOpts)
+  }
+
+  panel.webview.html = getDevtoolContent(externalSrc, socketOptions)
+
+  return panel
+}
+
+export function getDevtoolContent(
+  externals: Externals,
+  socketOptions: SocketOptions
+) {
   return `<!DOCTYPE html>
 <html>
   <head>
@@ -57,9 +104,10 @@ export function getDevtoolContent(externals: Externals) {
         ReduxDevTools.default,
         {
           socketOptions: {
-            hostname: 'localhost',
-            port: '8000',
+            hostname: '${socketOptions.hostname}',
+            port: '${socketOptions.port}',
             autoReconnect: true,
+            type: 'custom'
           },
         },
         'Remote Devtools'

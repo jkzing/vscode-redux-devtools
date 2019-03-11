@@ -45,12 +45,12 @@
       "properties": {
         "reduxdev.hostname": {
           "type": "string",
-          "default": "127.0.0.1",
+          "default": "localhsot",
           "description": "The hostname your remotedev server started on."
         },
-        "reduxdev.socketPort": {
+        "reduxdev.port": {
           "type": "number",
-          "default": 1024,
+          "default": 8000,
           "description": "The socket port for Redux Devtools to listen."
         }
       }
