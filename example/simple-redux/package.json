@@ -4,14 +4,15 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "parcel index.html"
+    "start": "parcel index.html",
+    "redux-devtools": "redux-devtools --hostname=localhost --port=1024"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.0",
-    "remotedev-server": "^0.3.1"
+    "redux-devtools-cli": "^0.0.1-1",
+    "remote-redux-devtools": "^0.5.16"
   },
   "dependencies": {
-    "redux": "^4.0.1",
-    "remote-redux-devtools": "^0.5.16"
+    "redux": "^4.0.1"
   }
 }

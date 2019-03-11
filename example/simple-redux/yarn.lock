@@ -4890,6 +4890,29 @@ rechoir@^0.6.2:
   dependencies:
     resolve "^1.1.6"
 
+redux-devtools-cli@^0.0.1-1:
+  version "0.0.1-1"
+  resolved "http://registry.npm.taobao.org/redux-devtools-cli/download/redux-devtools-cli-0.0.1-1.tgz#7e91dd210a63ced5b6c9117a308476219edcd24d"
+  integrity sha1-fpHdIQpjztW2yRF6MIR2IZ7c0k0=
+  dependencies:
+    body-parser "^1.15.0"
+    chalk "^1.1.3"
+    cors "^2.7.1"
+    ejs "^2.4.1"
+    express "^4.13.3"
+    getport "^0.1.0"
+    graphql "^0.13.0"
+    graphql-server-express "^1.4.0"
+    graphql-tools "^4.0.3"
+    knex "^0.15.2"
+    lodash "^4.15.0"
+    minimist "^1.2.0"
+    morgan "^1.7.0"
+    semver "^5.3.0"
+    socketcluster "^14.3.3"
+    sqlite3 "^4.0.4"
+    uuid "^3.0.1"
+
 redux-devtools-core@^0.2.1:
   version "0.2.1"
   resolved "http://registry.npm.taobao.org/redux-devtools-core/download/redux-devtools-core-0.2.1.tgz#4e43cbe590a1f18c13ee165d2d42e0bc77a164d8"
@@ -5022,29 +5045,6 @@ remotedev-serialize@^0.1.8:
   integrity sha1-yZyxhOf3GpBhYqvEBL6M4zgQIF8=
   dependencies:
     jsan "^3.1.13"
-
-remotedev-server@^0.3.1:
-  version "0.3.1"
-  resolved "http://registry.npm.taobao.org/remotedev-server/download/remotedev-server-0.3.1.tgz#711f413f20968d7c9f4f7e9eff82e98377f49012"
-  integrity sha1-cR9BPyCWjXyfT36e/4Lpg3f0kBI=
-  dependencies:
-    body-parser "^1.15.0"
-    chalk "^1.1.3"
-    cors "^2.7.1"
-    ejs "^2.4.1"
-    express "^4.13.3"
-    getport "^0.1.0"
-    graphql "^0.13.0"
-    graphql-server-express "^1.4.0"
-    graphql-tools "^4.0.3"
-    knex "^0.15.2"
-    lodash "^4.15.0"
-    minimist "^1.2.0"
-    morgan "^1.7.0"
-    semver "^5.3.0"
-    socketcluster "^14.3.3"
-    sqlite3 "^4.0.4"
-    uuid "^3.0.1"
 
 remove-trailing-separator@^1.0.1:
   version "1.1.0"
