@@ -4,6 +4,7 @@
     <title>Remote Devtools</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="renderer" content="webkit" />
+    <link rel="shortcut icon" href="/favicon.ico" sizes="128x128">
     <style>
       html,
       body,
@@ -16,6 +17,16 @@
   <body>
     <div id="root"></div>
   </body>
+  <script>
+    window.localStorage = {
+      length: 0,
+      getItem() {},
+      setItem() {},
+      removeItem() {},
+      clear() {},
+      key() {}
+    }
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/react@15/dist/react.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/react-dom@15/dist/react-dom.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/remotedev-app@0.11.0-2/dist/remotedev-app.min.js"></script>

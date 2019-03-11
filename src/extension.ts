@@ -24,8 +24,17 @@ export function activate(context: vscode.ExtensionContext) {
       const reduxDevtoolsCorePath = vscode.Uri.file(
         path.join(context.extensionPath, 'externals', 'redux-devtools-core.js')
       )
+      const reactPath = vscode.Uri.file(
+        path.join(context.extensionPath, 'externals', 'react.production.min.js')
+      )
+      const reactDomPath = vscode.Uri.file(
+        path.join(context.extensionPath, 'externals', 'react-dom.production.min.js')
+      )
+      const pathOpts = { scheme: 'vscode-resource' }
       const externalSrc = {
-        reduxDevtoolsCore: reduxDevtoolsCorePath.with({ scheme: 'vscode-resource' })
+        react: reactPath.with(pathOpts),
+        reactDom: reactDomPath.with(pathOpts),
+        reduxDevtoolsCore: reduxDevtoolsCorePath.with(pathOpts)
       }
 
       panel.webview.html = getDevtoolContent(externalSrc)

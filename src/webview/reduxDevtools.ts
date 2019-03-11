@@ -1,4 +1,12 @@
-export function getDevtoolContent(externals: any) {
+import * as vscode from 'vscode'
+
+export interface Externals {
+  react: vscode.Uri
+  reactDom: vscode.Uri
+  reduxDevtoolsCore: vscode.Uri
+}
+
+export function getDevtoolContent(externals: Externals) {
   return `<!DOCTYPE html>
 <html>
   <head>
@@ -12,13 +20,31 @@ export function getDevtoolContent(externals: any) {
         width: 100%;
         height: 100%;
       }
+
+      body {
+        padding: 0!important;
+      }
     </style>
   </head>
   <body>
     <div id="root"></div>
   </body>
-  <script src="https://cdn.jsdelivr.net/npm/react@16.7.0/umd/react.production.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/react-dom@16.7.0/umd/react-dom.production.min.js"></script>
+  <script>
+    Object.defineProperty(window, 'localStorage', {
+      get() {
+        return {
+          length: 0,
+          getItem() {},
+          setItem() {},
+          removeItem() {},
+          clear() {},
+          key() {}
+        }
+      }
+    })
+  </script>
+  <script src="${externals.react}"></script>
+  <script src="${externals.reactDom}"></script>
   <script src="${externals.reduxDevtoolsCore}"></script>
   <script>
     const root = document.getElementById('root')
