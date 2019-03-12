@@ -1,6 +1,6 @@
 # Change Log
 
-## [Unreleased]
+## 1.0.0
 ### Changed
 - refactor: use vscode WebView API instead of `vscode.previewHtml` [@jkzing](https://github.com/jkzing)
 - refactor: use `redux-devtools-core` insteadof `remotedev-app` [@jkzing](https://github.com/jkzing)
