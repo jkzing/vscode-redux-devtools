@@ -3,7 +3,7 @@
   "displayName": "Redux DevTools",
   "description": "vscode redux devtools wrapper",
   "icon": "logo/128x128.png",
-  "version": "0.0.11",
+  "version": "1.0.0",
   "publisher": "jingkaizhao",
   "author": {
     "name": "Jingkai Zhao",
@@ -23,8 +23,8 @@
     "theme": "dark"
   },
   "engines": {
-		"vscode": "^1.32.0"
-	},
+    "vscode": "^1.32.0"
+  },
   "categories": [
     "Debuggers"
   ],
@@ -58,18 +58,18 @@
   },
   "scripts": {
     "vscode:prepublish": "yarn run compile",
-		"compile": "tsc -p ./",
-		"watch": "tsc -watch -p ./",
-		"postinstall": "node ./node_modules/vscode/bin/install",
-		"test": "yarn run compile && node ./node_modules/vscode/bin/test"
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "yarn run compile && node ./node_modules/vscode/bin/test"
   },
   "devDependencies": {
     "typescript": "^3.3.1",
-		"vscode": "^1.1.28",
-		"tslint": "^5.12.1",
+    "vscode": "^1.1.28",
+    "tslint": "^5.12.1",
     "mocha": "^2.3.3",
-		"@types/node": "^10.12.21",
-		"@types/mocha": "^2.2.42"
+    "@types/node": "^10.12.21",
+    "@types/mocha": "^2.2.42"
   },
   "dependencies": {}
 }
