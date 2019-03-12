@@ -9,3 +9,6 @@
 
 ### Added
 - docs: add a simple redux app for example [@jkzing](https://github.com/jkzing)
+
+### BREAKING CHANGES
+- `reduxdev.socketPort` is renamed to `reduxdev.port`
