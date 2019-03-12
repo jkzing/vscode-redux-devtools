@@ -6,13 +6,13 @@ Visual Studio Code extension to integrate Redux Devtools into editor.
 
 Inspect redux store of your app. Like the one you may use in Chrome.
 
-![Feature](assets/demo.png)
+![Feature](assets/demo.gif)
 
 ## Quick Start
 
 * Install the extension
 
-* `cmd+shift+P` to open **Command Palette** and type in `Redux Devtools`, select command `Open Devtool to the Side`.
+* `CMD + Shift + P` to open **Command Palette** and type in `Redux Devtools`, select command `Open Devtool to the Side`.
 
 * In devtool pannel, click settings to set listening port and host to your remotedev server.
 
