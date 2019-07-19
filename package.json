@@ -45,7 +45,7 @@
       "properties": {
         "reduxdev.hostname": {
           "type": "string",
-          "default": "localhsot",
+          "default": "localhost",
           "description": "The hostname your remotedev server started on."
         },
         "reduxdev.port": {
